@@ -28,6 +28,6 @@ jobs:
     
     - name: Create zip
       #run: echo "${{ env.DEPLOY_PACK_NAME }}"
-      uses: zip -r "${{ env.DEPLOY_PACK_NAME }}" ./ -x *.git*
+      uses: zip -r myzip.zip ./ -x *.git*
       
       
