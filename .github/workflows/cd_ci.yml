@@ -19,6 +19,6 @@ jobs:
       uses: actions/checkout@v1
     
     - name: Create zip
-      uses: zip -v
+      uses: zip -r ${{ env.DEPLOY_PACK_NAME }} ./ -x *.git*
       
       
