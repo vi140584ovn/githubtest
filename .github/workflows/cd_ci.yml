@@ -27,7 +27,7 @@ jobs:
       uses: actions/checkout@v1
     
     - name: Create zip
-      run: echo "${{ env.DEPLOY_PACK_NAME }}"
-      #uses: zip -r ${{ env.DEPLOY_PACK_NAME }} ./ -x *.git*
+      #run: echo "${{ env.DEPLOY_PACK_NAME }}"
+      uses: zip -r "${{ env.DEPLOY_PACK_NAME }}" ./ -x *.git*
       
       
