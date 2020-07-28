@@ -4,7 +4,7 @@ env:
   EB_APP_NAME: "myflask"
   EB_ENV_NAME: "myflask-env"
   DEPLOY_PACK_NAME: "flask_app_${{ github.sha }}.zip"
-  AWS_REGION_NAME: "eu-central-1a"
+  AWS_REGION_NAME: "eu-central-1c"
 on:
   push:
     branches:
@@ -28,3 +28,10 @@ jobs:
         aws-secret-key-id    : ${{ secrets.MY_AWS_ACCESS_KEY }}
         aws-secret-access-key: ${{ secrets.MY_AWS_SECRET_KEY }}
         aws-region           : ${{ env.AWS_REGION_NAME }}
+    
+    - name: Copy deployment package to s3 backet
+      run: aws s3 cp ${{ DEPLOY_PACK_NAME }} s3//${{ env.EB_PACACHE_S3_BUCKET_NAME }}/
+    
+    - name: Print happy massege
+      run: echo "CI Pipeline part finished succefully"
+     
