@@ -1,8 +1,8 @@
 name: CD_CI
 env:
   EB_PACAGE_S3_BUCKET_NAME: "flask-app-pack"
-  EB_APP_NAME: "myflask"
-  EB_ENV_NAME: "myflask-env"
+  EB_APP_NAME: "testgithub"
+  EB_ENV_NAME: "Testgithub-env"
   DEPLOY_PACK_NAME: "flask_app_${{ github.sha }}.zip"
   AWS_REGION_NAME: "eu-central-1"
 on:
